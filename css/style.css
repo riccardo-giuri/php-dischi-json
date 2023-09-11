@@ -11,6 +11,7 @@
 }
 
 .card {
+    height: 100%;
     padding: 20px 30px;
     background-color: #0e161e;
 }

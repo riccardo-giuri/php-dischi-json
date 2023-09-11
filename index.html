@@ -23,80 +23,15 @@
 
         <main class="pb-4">
             <div class="container">
-                <div class="row d-flex justify-content-around">
-                    <div class="col-4 mt-4">
+                <div class="row d-flex justify-content-evenly gap-4">
+                    <div class="col-3 mt-4" v-for="disco in dischiData">
                         <div class="card">
-                            <img src="https://e.snmc.io/i/600/w/2b9021f6966a7809169d021fa8ca1c7a/11246810/slowdive-everything-is-alive-Cover-Art.jpg" alt="" class="card-img-top">
+                            <img :src="disco.CoverURL" alt="" class="card-img-top">
 
                             <div class="card-body">
-                                <h4 class="card-text">Ciao Senont</h3>
-                                <div class="card-text"> Bon Jovi</div>
-                                <h6 class="card-text">1896</h6>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-4 mt-4">
-                        <div class="card">
-                            <img src="https://e.snmc.io/i/600/w/2b9021f6966a7809169d021fa8ca1c7a/11246810/slowdive-everything-is-alive-Cover-Art.jpg" alt="" class="card-img-top">
-
-                            <div class="card-body">
-                                <h4 class="card-text">Ciao Senont</h3>
-                                <div class="card-text"> Bon Jovi</div>
-                                <h6 class="card-text">1896</h6>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-4 mt-4">
-                        <div class="card">
-                            <img src="https://e.snmc.io/i/600/w/2b9021f6966a7809169d021fa8ca1c7a/11246810/slowdive-everything-is-alive-Cover-Art.jpg" alt="" class="card-img-top">
-
-                            <div class="card-body">
-                                <h4 class="card-text">Ciao Senont</h3>
-                                <div class="card-text"> Bon Jovi</div>
-                                <h6 class="card-text">1896</h6>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-4 mt-4">
-                        <div class="card">
-                            <img src="https://e.snmc.io/i/600/w/2b9021f6966a7809169d021fa8ca1c7a/11246810/slowdive-everything-is-alive-Cover-Art.jpg" alt="" class="card-img-top">
-
-                            <div class="card-body">
-                                <h4 class="card-text">Ciao Senont</h3>
-                                <div class="card-text"> Bon Jovi</div>
-                                <h6 class="card-text">1896</h6>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-4 mt-4">
-                        <div class="card">
-                            <img src="https://e.snmc.io/i/600/w/2b9021f6966a7809169d021fa8ca1c7a/11246810/slowdive-everything-is-alive-Cover-Art.jpg" alt="" class="card-img-top">
-
-                            <div class="card-body">
-                                <h4 class="card-text">Ciao Senont</h3>
-                                <div class="card-text"> Bon Jovi</div>
-                                <h6 class="card-text">1896</h6>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-4 mt-4">
-                        <div class="card">
-                            <img src="https://e.snmc.io/i/600/w/2b9021f6966a7809169d021fa8ca1c7a/11246810/slowdive-everything-is-alive-Cover-Art.jpg" alt="" class="card-img-top">
-
-                            <div class="card-body">
-                                <h4 class="card-text">Ciao Senont</h3>
-                                <div class="card-text"> Bon Jovi</div>
-                                <h6 class="card-text">1896</h6>
+                                <h4 class="card-text">{{ disco.Title }}</h3>
+                                <div class="card-text">{{ disco.Artist }}</div>
+                                <h6 class="card-text">{{ disco.Year }}</h6>
 
                             </div>
                         </div>
