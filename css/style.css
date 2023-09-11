@@ -1,0 +1,25 @@
+.top_nav {
+    height: 100px;
+    background-color: #0e161e;
+    display: flex;
+    align-items: center;
+    padding: 0px 250px;
+}
+
+.top_nav img {
+    height: 70%;
+}
+
+.card {
+    padding: 20px 30px;
+    background-color: #0e161e;
+}
+
+.card-body {
+    text-align: center;
+    color: white;
+}
+
+#app {
+    background-color: #1d2d3c;
+}
