@@ -24,3 +24,33 @@
 #app {
     background-color: #1d2d3c;
 }
+
+.overlay {
+    height: 98vh;
+    width: 98vw;
+    background-color: rgba(17, 32, 49, .95);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.card-container {
+    width: 25%;
+}
+
+.toggled {
+    background-color: transparent;
+    border: 0;
+}
+
+.btn-container {
+    right: 24px;
+    top: 24px;
+}

@@ -1,12 +1,32 @@
 Vue.createApp({
     data() {
         return {
-            dischiData: []
+            dischiData: [],
+            indexClicked: 0,
+            isCardClicked: false
         }
     },
 
     methods: {
+        OnCardClick(index) {
+            if(!this.isCardClicked) {
+                this.indexClicked = index;
+                this.isCardClicked = !this.isCardClicked;
+                const body = document.body;
+                if(!body.classList.contains('overflow-hidden')) {
+                    body.classList.add('overflow-hidden');
+                }
+            }
+        },
 
+        OnCardExit() {
+            this.indexClicked = 0;
+            this.isCardClicked = !this.isCardClicked;
+            const body = document.body;
+            if(body.classList.contains('overflow-hidden')) {
+                body.classList.remove('overflow-hidden');
+            }
+        }
     },
 
     mounted() {

@@ -9,12 +9,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
-
-    <div id="app">
+    <div id="app" class="position-relative">
         <header>
             <div class="top_nav">
                 <img src="./img/spotifyLogo.png" alt="">
@@ -24,21 +24,39 @@
         <main class="pb-4">
             <div class="container">
                 <div class="row d-flex justify-content-evenly gap-4">
-                    <div class="col-3 mt-4" v-for="disco in dischiData">
-                        <div class="card">
+                    <div class="col-3 mt-4" v-for="(disco, i) in dischiData">
+                        <div class="card" @click="OnCardClick(i)">
                             <img :src="disco.CoverURL" alt="" class="card-img-top">
 
                             <div class="card-body">
                                 <h4 class="card-text">{{ disco.Title }}</h3>
                                 <div class="card-text">{{ disco.Artist }}</div>
                                 <h6 class="card-text">{{ disco.Year }}</h6>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
+
+        <div class="overlay" v-if="isCardClicked === true">
+            <div class="wrapper position-relative d-flex align-items-center justify-content-center">
+                <div class="position-absolute btn-container" @click="OnCardExit()">
+                    <button class="btn btn-outline-light"><i class="fa-solid fa-x"></i></button>
+                </div>
+    
+                <div class="card-container">
+                    <div class="card toggled">
+                        <img :src="dischiData[indexClicked].CoverURL" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <h4 class="card-text">{{ dischiData[indexClicked].Title }}</h3>
+                            <div class="card-text">{{ dischiData[indexClicked].Artist }}</div>
+                            <h6 class="card-text">{{ dischiData[indexClicked].Year }}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
